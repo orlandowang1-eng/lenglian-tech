@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冷联科技有限公司 | 空调 · 中央空调 · 冷库一体化解决方案服务商</title>
+<meta name="description" content="冷联科技有限公司，专业提供空调、中央空调与冷库一体化解决方案，覆盖设计、安装、调试与长期运维，工程能力覆盖 −35℃ 至 +45℃ 全温区。">
+<style>
+:root{
+  --ink:#0a1f3d;
+  --ink-2:#15365e;
+  --brand:#1e64c8;
+  --brand-d:#144a9b;
+  --brand-l:#e8f1fc;
+  --cyan:#37a9d8;
+  --freeze:#3f5bd9;
+  --warm:#e0632c;
+  --slate:#5b6b7c;
+  --slate-2:#8a99a8;
+  --line:#e2e8ee;
+  --paper:#fff;
+  --paper-2:#f5f8fb;
+  --r:6px;
+  --s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:64px;--s6:92px;
+  --maxw:1240px;
+  --ff:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  --ff-mono:"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  --shadow:0 2px 8px rgba(10,31,61,.06);
+  --shadow-l:0 14px 38px rgba(10,31,61,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--ff);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s3)}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(27px,3.2vw,38px)}
+.mono{font-family:var(--ff-mono);font-variant-numeric:tabular-nums}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+.eyebrow{font-size:12.5px;letter-spacing:.2em;color:var(--brand);font-weight:700;margin:0 0 12px;text-transform:uppercase}
+.sec-title{text-align:center;margin-bottom:var(--s5)}
+.sec-title p.desc{max-width:60ch;margin:14px auto 0;color:var(--slate);font-size:16px}
+.sec-title::after{content:"";display:block;width:46px;height:3px;background:var(--brand);margin:20px auto 0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:600;padding:12px 26px;border-radius:var(--r);border:1.5px solid transparent;cursor:pointer;transition:.2s;font-family:var(--ff)}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-d);transform:translateY(-1px);box-shadow:0 6px 18px rgba(30,100,200,.3)}
+.btn-outline{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+.btn-outline:hover{background:#fff;color:var(--brand);border-color:#fff}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+
+/* 顶栏 */
+.demo-flag{background:#fff6e5;border-bottom:1px solid #f0dcb4;color:#8a6420;font-size:13px;padding:8px 0}
+.demo-flag .wrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;height:72px;gap:var(--s4)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-txt b{display:block;font-size:18px;font-weight:700;letter-spacing:.02em;line-height:1.25}
+.brand-txt small{display:block;font-size:9.5px;letter-spacing:.2em;color:var(--slate-2);font-family:var(--ff-mono)}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0 0 0 auto;padding:0;font-size:15px}
+.nav ul a{color:#33475e;padding:24px 0;display:block;border-bottom:3px solid transparent;transition:.18s;font-weight:500}
+.nav ul a:hover,.nav ul a.active{color:var(--brand);border-color:var(--brand)}
+.nav-toggle{display:none;margin-left:auto}
+
+/* HERO */
+.hero{position:relative;color:#fff;min-height:600px;display:flex;align-items:center;background:var(--ink)}
+.hero-bg{position:absolute;inset:0;background-image:url(img/hero.jpg);background-size:cover;background-position:center 36%}
+.hero-mask{position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,31,61,.94) 0%,rgba(10,31,61,.86) 34%,rgba(21,54,94,.62) 60%,rgba(21,54,94,.34) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding:var(--s6) 0}
+.hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:.01em;line-height:1.18}
+.hero h1 .dot{color:var(--cyan);margin:0 .18em;font-weight:400}
+.hero .sub{margin:var(--s3) 0 0;font-size:clamp(15px,1.6vw,19px);color:#cfe0f0;font-weight:500;letter-spacing:.02em}
+.hero .sub span{opacity:.45;margin:0 12px}
+.hero-cta{margin-top:var(--s4);display:flex;gap:14px;flex-wrap:wrap}
+
+/* 四大优势 */
+.adv{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:var(--s6);max-width:980px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);overflow:hidden}
+.adv-item{display:flex;gap:13px;align-items:flex-start;background:rgba(8,24,46,.96);padding:20px 18px}
+.adv-item svg{flex:none;margin-top:2px}
+.adv-item b{display:block;font-size:15.5px;font-weight:600;letter-spacing:.02em}
+.adv-item span{display:block;font-size:12.5px;color:#dbe8f3;margin-top:4px;line-height:1.6}
+
+/* 三大方案卡 */
+.solutions{padding:var(--s6) 0;background:var(--paper)}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.sol{position:relative;border-radius:var(--r);overflow:hidden;min-height:400px;display:flex;flex-direction:column;justify-content:space-between;padding:var(--s4) var(--s3);color:#fff;isolation:isolate}
+.sol-img{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;transition:transform .5s ease}
+.sol:hover .sol-img{transform:scale(1.06)}
+.sol::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,31,61,.80) 0%,rgba(10,31,61,.52) 40%,rgba(10,31,61,.90) 100%)}
+.sol.dense::after{background:linear-gradient(180deg,rgba(8,26,52,.88) 0%,rgba(8,26,52,.68) 38%,rgba(8,26,52,.93) 100%)}
+.sol .tag{background:rgba(8,24,46,.55)}
+.sol .tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--ff-mono);font-size:11.5px;letter-spacing:.05em;padding:4px 10px;border:1px solid rgba(255,255,255,.55);border-radius:999px;align-self:flex-start;margin-bottom:14px}
+.sol h3{font-size:23px;letter-spacing:.02em}
+.sol .slogan{margin:8px 0 0;font-size:15px;color:#d3e3f3;font-weight:500}
+.sol ul{list-style:none;margin:var(--s3) 0 0;padding:0;font-size:13.5px;color:#c2d5e7;display:grid;gap:7px}
+.sol ul li{padding-left:15px;position:relative}
+.sol ul li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:1.5px;background:var(--cyan)}
+.sol .more{margin-top:var(--s3)}
+
+/* 温区图 */
+.zones{padding:var(--s6) 0;background:var(--ink);color:#fff}
+.zones .sec-title h2{color:#fff}
+.zones .sec-title p.desc{color:#a8c0d6}
+.zone-card{max-width:900px;margin:0 auto;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--r);padding:var(--s4)}
+.zone-row{display:grid;grid-template-columns:82px 1fr 92px;align-items:center;gap:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.09)}
+.zone-row:first-child{border-top:0}
+.zone-card .zone-row:last-of-type{padding-bottom:16px}
+.zone-name{font-size:14px;color:#dbe6ef;font-weight:500}
+.zone-track{height:9px;border-radius:999px;background:rgba(255,255,255,.09);position:relative}
+.zone-fill{position:absolute;top:0;bottom:0;border-radius:999px}
+.zone-val{font-family:var(--ff-mono);font-size:11.5px;color:#a8e2f5;text-align:right}
+.axis{position:relative;height:20px;font-family:var(--ff-mono);font-size:10.5px;color:#9ab0c2;margin:26px 96px 0 96px;padding-top:11px;border-top:1px solid rgba(255,255,255,.16)}
+.axis span{position:absolute;top:10px;transform:translateX(-50%);white-space:nowrap}
+.axis span::before{content:"";position:absolute;top:-10px;left:50%;width:1px;height:5px;background:rgba(255,255,255,.3)}
+.axis-cap{margin:26px 0 0;text-align:center;font-family:var(--ff-mono);font-size:10.5px;color:#7d94a8;letter-spacing:.05em}
+</style>
+<style>
+/* 参数表 */
+.spec{padding:var(--s6) 0;background:var(--paper-2)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:660px;font-size:14.5px}
+caption{text-align:left;font-size:12.5px;color:var(--slate-2);padding:13px var(--s3);border-bottom:1px solid var(--line);background:var(--paper-2)}
+th,td{padding:14px var(--s3);text-align:left;border-bottom:1px solid var(--line)}
+thead th{font-size:12.5px;letter-spacing:.06em;color:var(--ink);font-weight:700;background:var(--brand-l)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--brand-l)}
+tbody td:first-child{font-weight:600}
+td.num{font-family:var(--ff-mono);white-space:nowrap}
+
+/* 流程 */
+.flow{padding:var(--s6) 0;background:#fff}
+.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s2);list-style:none;padding:0;margin:0;counter-reset:step}
+.step{position:relative;padding-top:var(--s3)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--ff-mono);font-size:11.5px;color:var(--brand);letter-spacing:.1em;font-weight:700}
+.step::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--line)}
+.step:hover::after{background:var(--brand)}
+.step .dot{position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:#fff;border:2.5px solid var(--brand)}
+.step:last-child .dot{background:var(--brand)}
+.step h4{margin:10px 0 6px;font-size:16px}
+.step p{margin:0;font-size:13.5px;color:var(--slate)}
+.step .out{display:block;margin-top:9px;font-family:var(--ff-mono);font-size:11px;color:var(--brand-d)}
+
+/* 案例 */
+.cases{padding:var(--s6) 0;background:var(--paper-2)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.case{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.case:hover{box-shadow:var(--shadow-l);transform:translateY(-3px)}
+.case-img{height:186px;background-size:cover;background-position:center;position:relative}
+.case-img .badge{position:absolute;left:14px;top:14px;background:rgba(10,31,61,.82);color:#fff;font-family:var(--ff-mono);font-size:11px;padding:4px 10px;border-radius:3px;letter-spacing:.04em}
+.case-body{padding:var(--s3);display:flex;flex-direction:column;gap:9px;flex:1}
+.case-meta{font-size:12px;color:var(--slate-2);font-family:var(--ff-mono)}
+.case h3{font-size:18px}
+.case p{margin:0;font-size:14px;color:var(--slate)}
+.case-kpi{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);margin-top:auto;padding-top:var(--s2);border-top:1px solid var(--line)}
+.case-kpi span{display:block;font-family:var(--ff-mono);font-size:20px;color:var(--brand);font-weight:700}
+.case-kpi small{font-size:11.5px;color:var(--slate-2)}
+
+/* 数据 + 愿景 */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:340px}
+.stats-side{background:#fff;padding:var(--s5) var(--s4);display:flex;flex-direction:column;justify-content:center}
+.stats-side h2{font-size:clamp(24px,2.6vw,31px)}
+.stats-side>p{color:var(--slate);margin:14px 0 var(--s4);font-size:15px;max-width:46ch}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
+.stat{text-align:center}
+.stat svg{margin:0 auto 10px;display:block}
+.stat .num{font-family:var(--ff-mono);font-size:clamp(23px,2.6vw,31px);color:var(--brand);font-weight:700;line-height:1}
+.stat .cap{font-size:12.5px;color:var(--slate);margin-top:8px}
+.vision{position:relative;display:flex;align-items:center;padding:var(--s5) var(--s4);color:#fff;isolation:isolate;overflow:hidden}
+.vision-img{position:absolute;inset:0;z-index:-2;background-image:url(img/snow.jpg);background-size:cover;background-position:center 58%}
+.vision::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,31,61,.72),rgba(10,31,61,.42))}
+.vision h2{font-size:clamp(24px,2.8vw,34px);letter-spacing:.03em;line-height:1.4}
+.vision p{margin:var(--s2) 0 0;color:#d3e3f3;font-size:15px;max-width:40ch}
+
+/* 联系 */
+.contact{padding:var(--s6) 0;background:#fff}
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s5);align-items:start}
+.form{display:grid;gap:var(--s2)}
+.field{display:grid;gap:6px}
+.field label{font-size:13.5px;font-weight:600;color:#33475e}
+.field input,.field select,.field textarea{font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:#fff;color:var(--ink);width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px var(--brand-l)}
+.field textarea{resize:vertical;min-height:96px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)}
+.form-note{font-size:12.5px;color:var(--slate-2)}
+.form-msg{font-size:14px;padding:12px 15px;border-radius:var(--r);display:none;border:1px solid}
+.form-msg.show{display:block}
+.info-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4) var(--s3)}
+.info-block{padding:var(--s2) 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
+.info-block:last-child{border-bottom:0}
+.info-block svg{flex:none;margin-top:4px}
+.info-block h4{font-size:12.5px;color:var(--slate);font-weight:600;letter-spacing:.03em}
+.info-block p{margin:3px 0 0;font-size:15.5px;font-weight:600}
+.info-block p.sm{font-size:14px;font-weight:400;line-height:1.7}
+
+footer.site{background:var(--ink);color:#8ea9c4;padding:var(--s5) 0 var(--s3);font-size:14px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--s4);padding-bottom:var(--s4);border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-top h5{margin:0 0 var(--s2);color:#fff;font-size:15px;font-weight:600}
+.foot-top ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:13.5px}
+.foot-top a:hover{color:#fff}
+.foot-brand p{margin:12px 0 0;font-size:13.5px;line-height:1.8;max-width:34ch}
+.foot-bot{padding-top:var(--s3);display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap;font-size:12.5px;color:#6d88a3}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+@media (max-width:1000px){
+  .nav ul{gap:20px;font-size:14px}
+  .adv{grid-template-columns:repeat(2,1fr);gap:var(--s3) var(--s4);margin-top:var(--s5)}
+  .sol-grid{grid-template-columns:1fr}
+  .sol{min-height:300px}
+  .case-grid{grid-template-columns:1fr 1fr}
+  .flow-grid{grid-template-columns:repeat(2,1fr);gap:var(--s3)}
+  .split{grid-template-columns:1fr}
+  .vision{min-height:260px}
+  .contact-grid{grid-template-columns:1fr;gap:var(--s4)}
+  .stat-grid{grid-template-columns:repeat(2,1fr);gap:var(--s4) var(--s3)}
+}
+@media (max-width:720px){
+  section,.solutions,.zones,.spec,.flow,.cases,.contact{padding:var(--s5) 0}
+  .nav{height:64px}
+  .nav ul{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:var(--s2) var(--s3);border-bottom:1px solid var(--line);box-shadow:var(--shadow-l)}
+  .nav ul.open{display:flex}
+  .nav ul a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .nav-toggle{display:inline-flex;padding:9px 14px}
+  .nav .btn-primary{display:none}
+  .hero{min-height:auto}
+  .hero-inner{padding:var(--s5) 0}
+  .hero .sub span{display:block;height:0;overflow:hidden;margin:0}
+  .adv{grid-template-columns:1fr;gap:var(--s3)}
+  .case-grid{grid-template-columns:1fr}
+  .zone-row{grid-template-columns:66px 1fr 82px;gap:9px}
+  .axis{margin:12px 86px 0 78px}
+  .zone-card{padding:var(--s3) var(--s2)}
+  .field-row{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr;gap:var(--s3)}
+  .stats-side,.vision{padding:var(--s4) var(--s3)}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-flag"><div class="wrap"><strong>DEMO 演示版</strong><span>文案、数据与案例均为示意内容，正式上线前需替换为真实资质与业绩。</span></div></div>
+
+<header class="site">
+  <div class="wrap">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="冷联科技有限公司首页">
+        <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.5" fill="none" stroke="#1e64c8" stroke-width="1.6"/>
+          <g stroke="#1e64c8" stroke-width="2" stroke-linecap="round">
+            <path d="M20 8v24M9.6 14v12M30.4 14v12"/>
+            <path d="M20 8l-3.6 3.8M20 8l3.6 3.8M20 32l-3.6-3.8M20 32l3.6-3.8"/>
+            <path d="M9.6 14l17-9.8M30.4 26l-17 9.8M9.6 26l17 9.8M30.4 14l-17-9.8" opacity="0"/>
+          </g>
+          <g stroke="#37a9d8" stroke-width="2" stroke-linecap="round">
+            <path d="M9.9 14.2l20.2 11.6M9.9 25.8l20.2-11.6"/>
+            <path d="M9.9 14.2l1.3-4.9M9.9 14.2l-4.9 1.3M30.1 25.8l-1.3 4.9M30.1 25.8l4.9-1.3"/>
+            <path d="M9.9 25.8l-4.9-1.3M9.9 25.8l1.3 4.9M30.1 14.2l4.9 1.3M30.1 14.2l-1.3-4.9"/>
+          </g>
+        </svg>
+        <span class="brand-txt"><b>冷联科技有限公司</b><small>LENGLIAN THERMAL TECH</small></span>
+      </a>
+      <ul id="navmenu">
+        <li><a href="#top" class="active">首页</a></li>
+        <li><a href="#solutions">产品与服务</a></li>
+        <li><a href="#zones">技术能力</a></li>
+        <li><a href="#process">服务流程</a></li>
+        <li><a href="#cases">案例展示</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+      <button class="btn btn-ghost nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navmenu">菜单</button>
+      <a class="btn btn-primary" href="#contact" style="margin-left:20px">获取方案</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="城市楼顶大型中央空调冷水机组"></div>
+  <div class="hero-mask"></div>
+  <div class="wrap hero-inner">
+    <h1>专业制冷<span class="dot">·</span>智联未来</h1>
+    <p class="sub">空调<span>|</span>中央空调<span>|</span>冷库一体化解决方案服务商</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#solutions">了解更多 →</a>
+      <a class="btn btn-outline" href="#contact">免费现场勘查</a>
+    </div>
+
+    <div class="adv">
+      <div class="adv-item">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M3 22L11 8l5 8 4-5 9 11z" stroke="#37a9d8" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M3 27h26" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div><b>专业设计</b><span>逐时负荷计算<br>系统精准选型</span></div>
+      </div>
+      <div class="adv-item">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 28c6-4 9-8 9-13a9 9 0 10-18 0c0 5 3 9 9 13z" stroke="#37a9d8" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M16 22V11M12 15l4-4 4 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div><b>高效节能</b><span>改造项目平均<br>节能 28%</span></div>
+      </div>
+      <div class="adv-item">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 3l11 4v9c0 7-4.6 11.4-11 13C9.6 27.4 5 23 5 16V7z" stroke="#37a9d8" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M11 16l3.6 3.6L21 12.6" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div><b>品质保障</b><span>主机与工程<br>两年质保</span></div>
+      </div>
+      <div class="adv-item">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M6 20v-4a10 10 0 0120 0v4" stroke="#37a9d8" stroke-width="1.8" stroke-linecap="round"/>
+          <rect x="3" y="19" width="6" height="8" rx="2" stroke="#fff" stroke-width="1.8"/>
+          <rect x="23" y="19" width="6" height="8" rx="2" stroke="#fff" stroke-width="1.8"/>
+        </svg>
+        <div><b>全程服务</b><span>7×24 应急响应<br>市区 4 小时到场</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 三大方案 -->
+<section class="solutions" id="solutions">
+  <div class="wrap">
+    <div class="sec-title">
+      <p class="eyebrow">Products &amp; Services</p>
+      <h2>三大业务方向，一套温控逻辑</h2>
+      <p class="desc">无论是写字楼的舒适性空调，还是冷库的低温保存，本质都是「负荷—设备—围护—控制」四件事的匹配。</p>
+    </div>
+
+    <div class="sol-grid">
+      <article class="sol">
+        <div class="sol-img" style="background-image:url(img/office.jpg)" role="img" aria-label="现代办公空间落地窗与嵌入式空调"></div>
+        <div>
+          <span class="tag">18 ~ 26℃</span>
+          <h3>空调解决方案</h3>
+          <p class="slogan">舒适环境，智能控制</p>
+          <ul>
+            <li>家用与商用多联机系统</li>
+            <li>新风与净化联动配置</li>
+            <li>分区温控与远程调节</li>
+          </ul>
+        </div>
+        <div class="more"><a class="btn btn-outline" href="#contact">查看详情 →</a></div>
+      </article>
+
+      <article class="sol dense">
+        <div class="sol-img" style="background-image:url(img/plant.jpg)" role="img" aria-label="工业机房内的大型冷水机组"></div>
+        <div>
+          <span class="tag">全楼宇</span>
+          <h3>中央空调解决方案</h3>
+          <p class="slogan">高效稳定，节能环保</p>
+          <ul>
+            <li>风冷 / 水冷冷水机组选型</li>
+            <li>机房群控与楼宇自控接入</li>
+            <li>老旧机房节能改造</li>
+          </ul>
+        </div>
+        <div class="more"><a class="btn btn-outline" href="#contact">查看详情 →</a></div>
+      </article>
+
+      <article class="sol">
+        <div class="sol-img" style="background-image:url(img/coldroom.jpg)" role="img" aria-label="冷库内的制冷风机与货架"></div>
+        <div>
+          <span class="tag">−35 ~ 5℃</span>
+          <h3>冷库解决方案</h3>
+          <p class="slogan">精准控温，保鲜无忧</p>
+          <ul>
+            <li>速冻库 / 冷冻库 / 冷藏库 / 气调库</li>
+            <li>氟系统与氨、CO₂ 复叠系统</li>
+            <li>温湿度在线监测与告警</li>
+          </ul>
+        </div>
+        <div class="more"><a class="btn btn-outline" href="#contact">查看详情 →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 温区能力 -->
+<section class="zones" id="zones">
+  <div class="wrap">
+    <div class="sec-title">
+      <p class="eyebrow" style="color:#5fd0f0">Temperature Coverage</p>
+      <h2>工程温区覆盖 −35℃ ~ +45℃</h2>
+      <p class="desc">选型不是比谁的机器大，而是让温区、湿度、波动范围和能耗互相能兑现。</p>
+    </div>
+    <div class="zone-card">
+        <div class="zone-row">
+          <span class="zone-name">速冻加工</span>
+          <div class="zone-track"><div class="zone-fill" style="left:5.56%;width:7.77%;background:linear-gradient(90deg,#3f5bd9,#5f7ae6)"></div></div>
+          <span class="zone-val">−35~−28℃</span>
+        </div>
+        <div class="zone-row">
+          <span class="zone-name">冷冻储存</span>
+          <div class="zone-track"><div class="zone-fill" style="left:20.0%;width:4.44%;background:linear-gradient(90deg,#4a6ad6,#3f9fd0)"></div></div>
+          <span class="zone-val">−22~−18℃</span>
+        </div>
+        <div class="zone-row">
+          <span class="zone-name">冷藏保鲜</span>
+          <div class="zone-track"><div class="zone-fill" style="left:44.44%;width:5.56%;background:linear-gradient(90deg,#2f9ac9,#57bcd8)"></div></div>
+          <span class="zone-val">0~5℃</span>
+        </div>
+        <div class="zone-row">
+          <span class="zone-name">药品阴凉</span>
+          <div class="zone-track"><div class="zone-fill" style="left:46.67%;width:20.0%;background:linear-gradient(90deg,#3fb6c9,#7fc8a9)"></div></div>
+          <span class="zone-val">2~20℃</span>
+        </div>
+        <div class="zone-row">
+          <span class="zone-name">舒适空调</span>
+          <div class="zone-track"><div class="zone-fill" style="left:64.44%;width:8.89%;background:linear-gradient(90deg,#7fc8a9,#e8b34a)"></div></div>
+          <span class="zone-val">18~26℃</span>
+        </div>
+        <div class="zone-row">
+          <span class="zone-name">工艺恒温</span>
+          <div class="zone-track"><div class="zone-fill" style="left:66.67%;width:27.77%;background:linear-gradient(90deg,#e8b34a,#e0632c)"></div></div>
+          <span class="zone-val">20~45℃</span>
+        </div>
+        <div class="axis" role="presentation">
+          <span style="left:0.0%">-40℃</span>
+          <span style="left:22.22%">-20℃</span>
+          <span style="left:44.44%">0℃</span>
+          <span style="left:66.67%">+20℃</span>
+          <span style="left:94.44%">+45℃</span>
+        </div>
+      <p class="axis-cap">横轴为实际温度刻度，色条长度对应设计温区范围</p>
+    </div>
+  </div>
+</section>
+
+<!-- 参数表 -->
+<section class="spec">
+  <div class="wrap">
+    <div class="sec-title">
+      <p class="eyebrow">Technical Specification</p>
+      <h2>典型设计工况一览</h2>
+      <p class="desc">下表是各温区的常规交付口径，实际参数以现场勘查与负荷计算结果为准。</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <caption>数据为示意口径，用于展示信息呈现结构</caption>
+        <thead>
+          <tr><th scope="col">应用类型</th><th scope="col">设计温区</th><th scope="col">温度波动</th><th scope="col">常用制冷方式</th><th scope="col">典型交付周期</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>速冻加工库</td><td class="num">−35 ~ −28℃</td><td class="num">±1.5℃</td><td>螺杆 / CO₂ 复叠</td><td class="num">45 ~ 70 天</td></tr>
+          <tr><td>冷冻储存库</td><td class="num">−22 ~ −18℃</td><td class="num">±1.0℃</td><td>螺杆 / 活塞并联</td><td class="num">30 ~ 55 天</td></tr>
+          <tr><td>冷藏保鲜库</td><td class="num">0 ~ 5℃</td><td class="num">±1.0℃</td><td>涡旋并联机组</td><td class="num">20 ~ 40 天</td></tr>
+          <tr><td>药品阴凉库</td><td class="num">2 ~ 20℃</td><td class="num">±0.8℃</td><td>双系统冗余</td><td class="num">25 ~ 45 天</td></tr>
+          <tr><td>商业中央空调</td><td class="num">18 ~ 26℃</td><td class="num">±1.0℃</td><td>多联机 / 水机</td><td class="num">30 ~ 90 天</td></tr>
+          <tr><td>工艺恒温车间</td><td class="num">20 ~ 45℃</td><td class="num">±0.5℃</td><td>精密空调 + 除湿</td><td class="num">40 ~ 80 天</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 流程 -->
+<section class="flow" id="process">
+  <div class="wrap">
+    <div class="sec-title">
+      <p class="eyebrow">How We Work</p>
+      <h2>从一通电话到长期托管</h2>
+      <p class="desc">每个节点都有明确交付物，业主随时知道项目走到哪一步、下一步等谁。</p>
+    </div>
+    <ol class="flow-grid">
+      <li class="step"><span class="dot"></span><h4>现场勘查</h4><p>测量围护结构、用电条件与场地限制，确认使用工况与货物周转量。</p><span class="out">交付物 · 勘查记录表</span></li>
+      <li class="step"><span class="dot"></span><h4>负荷计算与方案</h4><p>出具冷热负荷计算书、系统方案、设备清单与投资估算，含能耗测算。</p><span class="out">交付物 · 方案书 + 报价</span></li>
+      <li class="step"><span class="dot"></span><h4>深化设计</h4><p>管路、电控、保温节点施工图，与土建、消防、强弱电专业会签。</p><span class="out">交付物 · 施工蓝图</span></li>
+      <li class="step"><span class="dot"></span><h4>安装与调试</h4><p>设备进场、管路施工、抽真空充注、分区调试并出具调试记录。</p><span class="out">交付物 · 调试记录</span></li>
+      <li class="step"><span class="dot"></span><h4>验收与运维</h4><p>降温曲线验证、温度分布测试、培训交底，转入年度保养与远程监测。</p><span class="out">交付物 · 验收报告</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 案例 -->
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="sec-title">
+      <p class="eyebrow">Projects</p>
+      <h2>三个不同温区的工程</h2>
+      <p class="desc">以下为示意案例，用于展示项目信息的呈现结构；正式站点请替换为真实业绩与业主授权信息。</p>
+    </div>
+    <div class="case-grid">
+      <article class="case">
+        <div class="case-img" style="background-image:url(img/coldroom.jpg)" role="img" aria-label="冷库内部制冷风机与货架"><span class="badge">−25℃ 冷冻库</span></div>
+        <div class="case-body">
+          <span class="case-meta">2025 · 食品加工</span>
+          <h3>华东预制菜中央工厂冷库</h3>
+          <p>12,000㎡ 冷冻库群，采用氨/CO₂ 复叠系统，配合热气除霜与余热回收。</p>
+          <div class="case-kpi">
+            <div><span>−25℃</span><small>设计库温</small></div>
+            <div><span>31%</span><small>单位能耗下降</small></div>
+          </div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case-img" style="background-image:url(img/plant.jpg)" role="img" aria-label="机房内冷水机组"><span class="badge">中央空调改造</span></div>
+        <div class="case-body">
+          <span class="case-meta">2024 · 商业办公</span>
+          <h3>城市综合体中央空调改造</h3>
+          <p>6.8 万㎡ 既有建筑，冷机群控升级与变频改造，营业不停业分区施工。</p>
+          <div class="case-kpi">
+            <div><span>26%</span><small>空调季电费下降</small></div>
+            <div><span>0</span><small>停业天数</small></div>
+          </div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case-img" style="background-image:url(img/ceiling.jpg)" role="img" aria-label="嵌入式中央空调室内机"><span class="badge">2~8℃ 阴凉库</span></div>
+        <div class="case-body">
+          <span class="case-meta">2025 · 医药流通</span>
+          <h3>区域医药物流中心温控</h3>
+          <p>阴凉库与冷藏库双系统冗余，全库 96 点温湿度监测，通过 GSP 验证。</p>
+          <div class="case-kpi">
+            <div><span>96</span><small>监测点位</small></div>
+            <div><span>±0.8℃</span><small>实测波动</small></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 数据 + 愿景 -->
+<section class="split" id="about">
+  <div class="stats-side">
+    <p class="eyebrow">About Us</p>
+    <h2>制冷设备不怕装，怕的是没人管</h2>
+    <p>冷联科技有限公司成立于 2013 年，现有工程与售后团队 120 余人，持证制冷工、电工、焊工齐备，在华东、华南设有备件仓与常驻服务站。</p>
+    <div class="stat-grid">
+      <div class="stat">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 25V7l9-4 9 4v18" stroke="#1e64c8" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 12h8M10 17h8M10 22h8" stroke="#1e64c8" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div class="num">10<span style="font-size:.6em">+</span></div><div class="cap">年行业深耕</div>
+      </div>
+      <div class="stat">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="11" cy="9" r="4.2" stroke="#1e64c8" stroke-width="1.7"/><path d="M3 24c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="#1e64c8" stroke-width="1.7" stroke-linecap="round"/><path d="M19 6.2a4.2 4.2 0 010 8M21 17.6c2.6.9 4 2.9 4 6.4" stroke="#1e64c8" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div class="num">500<span style="font-size:.6em">+</span></div><div class="cap">合作客户</div>
+      </div>
+      <div class="stat">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M7 4h14l4 6-11 14L3 10z" stroke="#1e64c8" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 10h22M11 4l-2 6 5 14 5-14-2-6" stroke="#1e64c8" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <div class="num">860<span style="font-size:.6em">+</span></div><div class="cap">交付工程</div>
+      </div>
+      <div class="stat">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 17v-3a9 9 0 0118 0v3" stroke="#1e64c8" stroke-width="1.7" stroke-linecap="round"/><rect x="2.5" y="16" width="5.5" height="7.5" rx="2" stroke="#1e64c8" stroke-width="1.7"/><rect x="20" y="16" width="5.5" height="7.5" rx="2" stroke="#1e64c8" stroke-width="1.7"/></svg>
+        <div class="num">7×24</div><div class="cap">小时应急响应</div>
+      </div>
+    </div>
+  </div>
+  <div class="vision">
+    <div class="vision-img" role="img" aria-label="雪山全景"></div>
+    <div>
+      <h2>专业成就品质<br>服务创造价值</h2>
+      <p>我们把大部分精力放在交付之后的十年，而不是签约之前的十天。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-title">
+      <p class="eyebrow">Contact Us</p>
+      <h2>说说你的场地，我们回一版方案</h2>
+      <p class="desc">留下基本信息，工程师会在一个工作日内联系你确认工况；也可以直接打电话，我们不设销售转接。</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="form" id="quoteForm" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">联系人 <span style="color:var(--warm)">*</span></label>
+            <input id="f-name" name="name" required autocomplete="name" placeholder="您的称呼">
+          </div>
+          <div class="field">
+            <label for="f-phone">联系电话 <span style="color:var(--warm)">*</span></label>
+            <input id="f-phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="手机或座机">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-type">项目类型</label>
+            <select id="f-type" name="type">
+              <option>空调系统新建</option>
+              <option>中央空调新建</option>
+              <option>中央空调节能改造</option>
+              <option>冷库新建</option>
+              <option>冷库改造 / 扩容</option>
+              <option>温控监测与运维</option>
+              <option>暂未确定，需要建议</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-area">场地面积（㎡）</label>
+            <input id="f-area" name="area" inputmode="numeric" placeholder="如 1200">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">工况说明</label>
+          <textarea id="f-msg" name="msg" placeholder="例如：储存冷冻肉类，要求库温 −18℃，日均进出货 20 吨，场地层高 6 米。"></textarea>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit">提交需求</button>
+          <span class="form-note">Demo 页面，表单不会真实发送。</span>
+        </div>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
+
+      <div class="info-card">
+        <div class="info-block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a1.5 1.5 0 01-1.7 1.5C10 19.6 4.4 14 3.5 5.7A1.5 1.5 0 015 4z" stroke="#1e64c8" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <div><h4>项目咨询</h4><p class="mono">400-000-0000</p></div>
+        </div>
+        <div class="info-block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#e0632c" stroke-width="1.7"/><path d="M12 6.5V12l4 2.2" stroke="#e0632c" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <div><h4>7×24 应急抢修</h4><p class="mono">138-0000-0000</p></div>
+        </div>
+        <div class="info-block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#1e64c8" stroke-width="1.7"/><path d="M3.6 6.4L12 13l8.4-6.6" stroke="#1e64c8" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <div><h4>邮箱</h4><p class="mono" style="font-size:14.5px">service@lenglian-demo.com</p></div>
+        </div>
+        <div class="info-block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z" stroke="#1e64c8" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="#1e64c8" stroke-width="1.7"/></svg>
+          <div><h4>公司地址</h4><p class="sm" style="font-weight:400">上海市 · 示例区示例路 000 号 A 座 5 层<br>华南服务站：广州市示例区示例大道 88 号</p></div>
+        </div>
+        <div class="info-block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#1e64c8" stroke-width="1.7"/><path d="M3 10h18M8 3v4M16 3v4" stroke="#1e64c8" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <div><h4>服务时间</h4><p class="sm" style="font-weight:400">工程咨询：周一至周六 08:30 – 18:00<br>应急抢修：全年 24 小时值守</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <h5>冷联科技有限公司</h5>
+        <p>空调 · 中央空调 · 冷库一体化解决方案服务商，覆盖 −35℃ 至 +45℃ 全温区工程能力。</p>
+      </div>
+      <div>
+        <h5>产品与服务</h5>
+        <ul>
+          <li><a href="#solutions">空调解决方案</a></li>
+          <li><a href="#solutions">中央空调解决方案</a></li>
+          <li><a href="#solutions">冷库解决方案</a></li>
+          <li><a href="#zones">技术能力</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于</h5>
+        <ul>
+          <li><a href="#process">服务流程</a></li>
+          <li><a href="#cases">案例展示</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 冷联科技有限公司 · 本页为演示用途</span>
+      <span>特种设备安装改造维修许可 · 制冷空调设备维修安装企业资质</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),m=document.getElementById('navmenu');
+  t.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });
+  m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+
+  // 导航高亮
+  var links=[].slice.call(document.querySelectorAll('#navmenu a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+140,cur=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur);});
+  },{passive:true});
+
+  var f=document.getElementById('quoteForm'),msg=document.getElementById('formMsg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=f.name.value.trim(),p=f.phone.value.trim();
+    if(!n||!p){
+      msg.textContent='请填写联系人与联系电话，方便工程师回访。';
+      msg.style.cssText='background:#fdecea;color:#a3312a;border-color:#f3c6c1';
+      msg.classList.add('show');return;
+    }
+    msg.textContent='已收到「'+n+'」的需求（演示环境，未真实提交）。正式站点将转入客服工单系统。';
+    msg.style.cssText='background:#e8f7f1;color:#0d7a5c;border-color:#b9e6d6';
+    msg.classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>
