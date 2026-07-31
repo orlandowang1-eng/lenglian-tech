@@ -102,8 +102,8 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);ba
 .sol ul li{padding-left:15px;position:relative}
 .sol ul li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:1.5px;background:var(--cyan)}
 .sol .more{margin-top:var(--s3)}
-.sol .body{display:flex;flex-direction:column;flex:1;justify-content:space-between}
-.sol>.tag{position:absolute;top:var(--s4);left:var(--s3);z-index:2}
+.sol .body{display:flex;flex-direction:column;flex:1;justify-content:flex-end;gap:0}
+.sol>.tag{position:static;align-self:flex-start;margin:0 0 auto}
 
 /* 温区图 */
 .zones{padding:var(--s6) 0;background:var(--ink);color:#fff}
